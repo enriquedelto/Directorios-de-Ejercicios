@@ -2,6 +2,6 @@
 
 numero_entero = int(input("Ingresa un número entero: "))
 
-numero_float = float(numero_entero)
+numero_entero = float(numero_entero)
 
-print(numero_float)
+print(numero_entero)
