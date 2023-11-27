@@ -6,12 +6,22 @@ def print_lista():
 lista = ["manzana", "platano", "sandia"]
 print_lista()
 
-agregado = str(input("Ingresa un nuevo item: "))
+agregado = input("Ingresa un nuevo item: ")
 lista.append(agregado)
-
 print_lista()
 
-eliminado = str(input("Elimina un item: "))
-lista.remove(eliminado)
+eliminado = input("Elimina un item: ")
+if eliminado in lista:
+    lista.remove(eliminado)
+else:
+    print(f"El ítem '{eliminado}' no se encuentra en la lista.")
+print_lista()
 
+elemento_a_modificar = input("Ingresa el elemento que deseas modificar: ")
+if elemento_a_modificar in lista:
+    indice = lista.index(elemento_a_modificar)
+    nuevo_item = input("Ingresa el elemento sustituto: ")
+    lista[indice] = nuevo_item
+else:
+    print(f"El ítem '{elemento_a_modificar}' no se encuentra en la lista.")
 print_lista()
