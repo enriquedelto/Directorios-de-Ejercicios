@@ -5,14 +5,21 @@ def analizar_tiempo(tiempo_str):
             horas = int(partes[0])
             minutos = int(partes[1])
             segundos = int(partes[2])
+            
+            if not (0 <= horas < 24):
+                raise ValueError("La hora debe estar entre 0 y 23.")
+            if not (0 <= minutos < 60):
+                raise ValueError("Los minutos deben estar entre 0 y 59.")
+            if not (0 <= segundos < 60):
+                raise ValueError("Los segundos deben estar entre 0 y 59.")
+            
             return horas, minutos, segundos
-    except ValueError:
-        pass 
-    raise ValueError("Formato de tiempo no válido. Debe ser en formato 00:00:00.") 
+    except ValueError as e:
+        raise ValueError(e)
 
 try:
-    tiempo_competidor_1_str = input("Ingresa el tiempo de finalización del corredor nº 1 (en formato 00:00:00): ")
-    tiempo_competidor_2_str = input("Ingresa el tiempo de finalización del corredor nº 2 (en formato 00:00:00): ")
+    tiempo_competidor_1_str = input("Ingresa el tiempo de finalización del corredor nº 1 (en formato hh:mm:ss): ")
+    tiempo_competidor_2_str = input("Ingresa el tiempo de finalización del corredor nº 2 (en formato hh:mm:ss): ")
 
     tiempo_competidor_1 = analizar_tiempo(tiempo_competidor_1_str)
     tiempo_competidor_2 = analizar_tiempo(tiempo_competidor_2_str)
