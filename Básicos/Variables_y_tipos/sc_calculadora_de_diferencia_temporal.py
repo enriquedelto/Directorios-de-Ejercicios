@@ -1,3 +1,6 @@
+def convertir_a_segundos(horas, minutos, segundos):
+    return horas * 3600 + minutos * 60 + segundos
+
 def analizar_tiempo(tiempo_str):
     try:
         partes = tiempo_str.split(':')
@@ -24,8 +27,8 @@ try:
     tiempo_competidor_1 = analizar_tiempo(tiempo_competidor_1_str)
     tiempo_competidor_2 = analizar_tiempo(tiempo_competidor_2_str)
 
-    tiempo_competidor_1_seg = tiempo_competidor_1[0] * 3600 + tiempo_competidor_1[1] * 60 + tiempo_competidor_1 [2]
-    tiempo_competidor_2_seg = tiempo_competidor_2[0] * 3600 + tiempo_competidor_2[1] * 60 + tiempo_competidor_2 [2] 
+    tiempo_competidor_1_seg = convertir_a_segundos(*tiempo_competidor_1)
+    tiempo_competidor_2_seg = convertir_a_segundos(*tiempo_competidor_2)
 
     diferencia = abs(tiempo_competidor_1_seg - tiempo_competidor_2_seg)
 
