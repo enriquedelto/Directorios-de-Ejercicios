@@ -1,18 +1,29 @@
 def agregar_contacto(agenda_telefonica):
-
-    pass
+    nombre = input("Ingrese el nombre del contacto: ")
+    numero = input("Ingrese el número de teléfono: ")
+    agenda_telefonica[nombre] = numero
+    print(f"Contacto {nombre} agregado.")
 
 def eliminar_contacto(agenda_telefonica):
-
-    pass
+    nombre = input("Ingrese el nombre del contacto a eleminar: ")
+    if nombre in agenda_telefonica:
+        del agenda_telefonica[nombre]
 
 def editar_contacto(agenda_telefonica):
-
-    pass
+    nombre = input("Ingrese el nombre del contacto a editar: ")
+    if nombre in agenda_telefonica:
+        numero_nuevo = input("Ingrese el nuevo número del contacto: ")
+        agenda_telefonica[nombre] = numero_nuevo
+        print("Contacto actualizado.")
+    else:
+        print("Contacto no encontrado.")
 
 def ver_lista(agenda_telefonica):
-
-    pass
+    if agenda_telefonica:
+        for nombre, numero in agenda_telefonica.items():
+            print(f"Contacto: {nombre}, Número: {numero}")
+    else:
+        print("La agenda está vacía.")
 
 agenda_telefonica = {}
 
