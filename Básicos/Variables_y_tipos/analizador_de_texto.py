@@ -1,4 +1,4 @@
-def contar_caracter():
+def contar_caracter(texto):
     caracter = input("Ingrese el caracter que desea contar: ")
     contador = 0
     for x in texto:
