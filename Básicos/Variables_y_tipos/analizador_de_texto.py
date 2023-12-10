@@ -6,9 +6,12 @@ def contar_caracter(texto):
             contador += 1
     return contador
 
+def invertir_texto(texto):
+    return texto[::-1]
+
 texto = input("Por favor ingresa el texto que desea analizar: ")
 print("El caracter aparece", contar_caracter(texto), "veces en el texto.")
-
+print("Texto invertido:", invertir_texto(texto))
 
 '''
 print("1. Contar caracteres específicos")
