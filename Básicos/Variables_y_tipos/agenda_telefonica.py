@@ -5,6 +5,8 @@ def agregar_contacto(agenda_telefonica):
     print(f"Contacto {nombre} agregado.")
 
 def eliminar_contacto(agenda_telefonica):
+    print("¿Qué contacto de la agenda desea eliminar?")
+    print(agenda_telefonica)
     nombre = input("Ingrese el nombre del contacto a eleminar: ")
     if nombre in agenda_telefonica:
         del agenda_telefonica[nombre]
