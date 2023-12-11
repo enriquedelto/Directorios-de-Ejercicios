@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 def contar_caracter(texto):
     caracter = input("Ingrese el caracter que desea contar: ")
     contador = 0
@@ -55,6 +57,17 @@ def analisis_frecuencia_caracteres(texto):
         else:
             frecuencia[caracter] = 1
     return frecuencia
+
+def grafico_frecuencia_caracteres(texto):
+    frecuencia = analisis_frecuencia_caracteres(texto)
+    caracteres = list(frecuencia.keys())
+    frecuencias = list(frecuencia.values())
+    
+    plt.bar(caracteres, frecuencias)
+    plt.xlabel('Caracteres')
+    plt.ylabel('Frecuencia')
+    plt.title('Frecuencia de Caracteres en el Texto')
+    plt.show()
 
 frecuencia = analisis_frecuencia_caracteres(texto)
 for caracter, frec in frecuencia.items():
