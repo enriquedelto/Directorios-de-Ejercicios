@@ -11,5 +11,4 @@ for i in range(num_dados_int):
     suma_total += resultado
     print(f"Resultado del dado {i+1}: {resultado}")
 
-# Muestra el resultado total
 print(f"Suma total de los dados: {suma_total}")
