@@ -69,23 +69,36 @@ def grafico_frecuencia_caracteres(texto):
     plt.title('Frecuencia de Caracteres en el Texto')
     plt.show()
 
-frecuencia = analisis_frecuencia_caracteres(texto)
-for caracter, frec in frecuencia.items():
-    print(f"'{caracter}': {frec}")
+def menu_principal():
+    while True:
+        print("\nMenú Principal:")
+        print("1. Contar caracteres específicos")
+        print("2. Invertir el texto")
+        print("3. Extraer substring")
+        print("4. Reemplazar caracteres")
+        print("5. Cifrado César Básico")
+        print("6. Análisis de frecuencia de caracteres")
+        print("7. Salir")
+        
+        opcion = input("Seleccione una opción: ")
+        
+        if opcion == "1":
+            print("El caracter aparece", contar_caracter(texto), "veces en el texto.")
+        elif opcion == "2":
+            print("Texto invertido:", invertir_texto(texto))
+        elif opcion == "3":
+            print("Texto extraído:", extraer_texto(texto))
+        elif opcion == "4":
+            print("Texto con caracteres reemplazados:", reemplazar_caracteres(texto))
+        elif opcion == "5":
+            print("Texto cifrado:", cifrado_cesar(texto))
+        elif opcion == "6":
+            grafico_frecuencia_caracteres(texto)
+        elif opcion == "7":
+            print("Saliendo del programa.")
+            break
+        else:
+            print("Opción no válida. Por favor intente de nuevo.")
 
 texto = input("Ingrese el texto que desea analizar: ")
-print("El caracter aparece", contar_caracter(texto), "veces en el texto.")
-print("Texto invertido:", invertir_texto(texto))
-print("Texto extraído: ", extraer_texto(texto))
-print("Texto con caracteres reemplazados:", reemplazar_caracteres(texto))
-print("Texto cifrado:", cifrado_cesar(texto))
-
-'''
-print("1. Contar caracteres específicos")
-print("2. Invertir el texto")
-print("3. Extraer substring")
-print("4. Reemplazar caracteres")
-print("5. Cifrado César Básico")
-print("6 Análisis de frecuencia de caracteres")
-'''
-
+menu_principal()
