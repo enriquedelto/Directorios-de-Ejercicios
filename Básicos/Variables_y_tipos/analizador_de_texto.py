@@ -47,6 +47,19 @@ def cifrado_cesar(texto):
             texto_cifrado += caracter
     return texto_cifrado
 
+def analisis_frecuencia_caracteres(texto):
+    frecuencia = {}
+    for caracter in texto:
+        if caracter in frecuencia:
+            frecuencia[caracter] += 1
+        else:
+            frecuencia[caracter] = 1
+    return frecuencia
+
+frecuencia = analisis_frecuencia_caracteres(texto)
+for caracter, frec in frecuencia.items():
+    print(f"'{caracter}': {frec}")
+
 texto = input("Ingrese el texto que desea analizar: ")
 print("El caracter aparece", contar_caracter(texto), "veces en el texto.")
 print("Texto invertido:", invertir_texto(texto))
