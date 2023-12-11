@@ -34,7 +34,8 @@ def reemplazar_caracteres(texto):
     texto_reemplazado = texto.replace(caracter_a_reemplazar, nuevo_caracter)
     return texto_reemplazado
             
-def cifrado_cesar(texto, desplazamiento):
+def cifrado_cesar(texto):
+    desplazamiento = int(input("Ingrese el desplazamiento para el cifrado César: "))
     texto_cifrado = ""
     for caracter in texto:
         if caracter.isalpha():
@@ -46,12 +47,12 @@ def cifrado_cesar(texto, desplazamiento):
             texto_cifrado += caracter
     return texto_cifrado
 
-
 texto = input("Ingrese el texto que desea analizar: ")
 print("El caracter aparece", contar_caracter(texto), "veces en el texto.")
 print("Texto invertido:", invertir_texto(texto))
 print("Texto extraído: ", extraer_texto(texto))
 print("Texto con caracteres reemplazados:", reemplazar_caracteres(texto))
+print("Texto cifrado:", cifrado_cesar(texto))
 
 '''
 print("1. Contar caracteres específicos")
