@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import simpledialog, messagebox
+from tkinter import ttk, simpledialog, messagebox, scrolledtext
+from tkinter import font as tkFont
 import tkinter.scrolledtext as scrolledtext
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
@@ -94,32 +95,48 @@ def crear_ventana_principal():
 
     ventana = tk.Tk()
     ventana.title("Analizador de Texto")
+    
+    estilo = ttk.Style(ventana)
+    estilo.theme_use('clam')  # 'alt', 'clam', 'classic', 'default', 'vista'
 
-    label = tk.Label(ventana, text="Ingrese su texto aquí:")
+    fuente_normal = tkFont.Font(family="Helvetica", size=12)
+    color_fondo = '#f0f0f0'
+    color_botones = '#e1e1e1'
+    ventana.configure(bg=color_fondo)
+
+    frame_texto = tk.Frame(ventana, bg=color_fondo)
+    frame_texto.pack(fill='both', expand=True, padx=10, pady=10)
+
+    label = tk.Label(frame_texto, text="Ingrese su texto aquí:", bg=color_fondo, font=fuente_normal)
     label.pack()
-    text_input = scrolledtext.ScrolledText(ventana, height=10)
-    text_input.pack()
+    text_input = scrolledtext.ScrolledText(frame_texto, height=10, font=fuente_normal)
+    text_input.pack(fill='both', expand=True)
 
-    boton_contar = tk.Button(ventana, text="Contar Caracteres", command=lambda: contar_caracter_gui(text_input.get("1.0", "end-1c")))
-    boton_contar.pack()
+    estilo.configure('TButton', font=fuente_normal, background=color_botones)
 
-    boton_invertir = tk.Button(ventana, text="Invertir Texto", command=lambda: invertir_texto_gui(text_input.get("1.0", "end-1c")))
-    boton_invertir.pack()
+    frame_botones = ttk.Frame(ventana)
+    frame_botones.pack(fill='x', padx=10, pady=10)
 
-    boton_extraer = tk.Button(ventana, text="Extraer Texto", command=lambda: extraer_texto_gui(text_input.get("1.0", "end-1c")))
-    boton_extraer.pack()
+    boton_contar = ttk.Button(frame_botones, text="Contar Caracteres", command=lambda: contar_caracter_gui(text_input.get("1.0", "end-1c")))
+    boton_contar.pack(side='left', padx=5)
 
-    boton_reemplazar = tk.Button(ventana, text="Reemplazar Caracteres", command=lambda: reemplazar_caracteres_gui(text_input.get("1.0", "end-1c")))
-    boton_reemplazar.pack()
+    boton_contar = ttk.Button(frame_botones, text="Contar Caracteres", command=lambda: contar_caracter_gui(text_input.get("1.0", "end-1c")))
+    boton_contar.pack(side='left', padx=5)
 
-    boton_cifrar = tk.Button(ventana, text="Cifrado César", command=lambda: cifrado_cesar_gui(text_input.get("1.0", "end-1c")))
-    boton_cifrar.pack()
+    boton_invertir = ttk.Button(frame_botones, text="Invertir Texto", command=lambda: invertir_texto_gui(text_input.get("1.0", "end-1c")))
+    boton_invertir.pack(side='left', padx=5)
 
-    boton_frecuencia = tk.Button(ventana, text="Análisis de Frecuencia", command=lambda: grafico_frecuencia_caracteres_gui(text_input.get("1.0", "end-1c")))
-    boton_frecuencia.pack()
+    boton_reemplazar = ttk.Button(frame_botones, text="Reemplazar Caracteres", command=lambda: reemplazar_caracteres_gui(text_input.get("1.0", "end-1c")))
+    boton_reemplazar.pack(side='left', padx=5)
 
-    boton_salir = tk.Button(ventana, text="Salir", command=ventana.quit)
-    boton_salir.pack()
+    boton_cifrar = ttk.Button(frame_botones, text="Cifrado César", command=lambda: cifrado_cesar_gui(text_input.get("1.0", "end-1c")))
+    boton_cifrar.pack(side='left', padx=5)
+
+    boton_frecuencia = ttk.Button(frame_botones, text="Análisis de Frecuencia", command=lambda: grafico_frecuencia_caracteres_gui(text_input.get("1.0", "end-1c")))
+    boton_frecuencia.pack(side='left', padx=5)
+
+    boton_salir = ttk.Button(frame_botones, text="Salir", command=ventana.quit)
+    boton_salir.pack(side='left', padx=5)
 
     ventana.mainloop()
 
