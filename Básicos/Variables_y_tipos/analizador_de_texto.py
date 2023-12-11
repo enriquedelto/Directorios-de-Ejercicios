@@ -62,11 +62,15 @@ def grafico_frecuencia_caracteres(texto):
     frecuencia = analisis_frecuencia_caracteres(texto)
     caracteres = list(frecuencia.keys())
     frecuencias = list(frecuencia.values())
-    
+
     plt.bar(caracteres, frecuencias)
+
     plt.xlabel('Caracteres')
     plt.ylabel('Frecuencia')
     plt.title('Frecuencia de Caracteres en el Texto')
+
+    plt.yticks(range(0, max(frecuencias) + 1))
+
     plt.show()
 
 def menu_principal():
