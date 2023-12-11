@@ -14,11 +14,12 @@ Python
    │     ├─ conversion_de_tipos.py
    │     ├─ formato_de_cadenas.py
    │     ├─ generador_contraseñas.py
+   │     ├─ gpt_analizador_de_texto_gui.py
+   │     ├─ gpt_simulador_dados.py
    │     ├─ intercambio_de_valores.py
    │     ├─ lista_de_compras.py
    │     ├─ redondeo_de_numeros.py
    │     ├─ simulador_dados.py
-   │     ├─ simulador_dados_gpt.py
    │     └─ verificador_de_dni.py
    └─ README.md
 
