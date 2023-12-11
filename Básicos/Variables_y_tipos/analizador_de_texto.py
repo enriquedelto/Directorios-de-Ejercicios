@@ -34,8 +34,17 @@ def reemplazar_caracteres(texto):
     texto_reemplazado = texto.replace(caracter_a_reemplazar, nuevo_caracter)
     return texto_reemplazado
             
-def cifrado_cesar(texto):
-    texto_cifrado = 
+def cifrado_cesar(texto, desplazamiento):
+    texto_cifrado = ""
+    for caracter in texto:
+        if caracter.isalpha():
+            ascii_offset = 65 if caracter.isupper() else 97
+            indice = (ord(caracter) - ascii_offset + desplazamiento) % 26
+            caracter_cifrado = chr(indice + ascii_offset)
+            texto_cifrado += caracter_cifrado
+        else:
+            texto_cifrado += caracter
+    return texto_cifrado
 
 
 texto = input("Ingrese el texto que desea analizar: ")
@@ -53,14 +62,3 @@ print("5. Cifrado César Básico")
 print("6 Análisis de frecuencia de caracteres")
 '''
 
-def cifrado_cesar(texto, desplazamiento):
-    texto_cifrado = ""
-    for caracter in texto:
-        if caracter.isalpha():
-            ascii_offset = 65 if caracter.isupper() else 97
-            indice = (ord(caracter) - ascii_offset + desplazamiento) % 26
-            caracter_cifrado = chr(indice + ascii_offset)
-            texto_cifrado += caracter_cifrado
-        else:
-            texto_cifrado += caracter
-    return texto_cifrado
