@@ -60,14 +60,15 @@ def analisis_frecuencia_caracteres(texto):
 
 def grafico_frecuencia_caracteres(texto):
     frecuencia = analisis_frecuencia_caracteres(texto)
-    caracteres = list(frecuencia.keys())
-    frecuencias = list(frecuencia.values())
+    frecuencias_ordenadas = sorted(frecuencia.items(), key=lambda x: x[1], reverse=True)
+
+    caracteres, frecuencias = zip(*frecuencias_ordenadas)
 
     plt.bar(caracteres, frecuencias)
 
     plt.xlabel('Caracteres')
     plt.ylabel('Frecuencia')
-    plt.title('Frecuencia de Caracteres en el Texto')
+    plt.title('Frecuencia de Caracteres en el Texto (Ordenada)')
 
     plt.yticks(range(0, max(frecuencias) + 1))
 
