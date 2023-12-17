@@ -2,7 +2,7 @@
 
 def comprobador(dato):
     try:
-        int_dato = int(dato)
+        int(dato)
         print("El dato ingresado es un número entero (integer).")
     except ValueError:
         print("El dato ingresado es una cadena de texto (string).")
