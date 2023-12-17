@@ -1,13 +1,12 @@
 # Escribe un programa que tome un input del usuario, evalúe si es un número (int) o una cadena (str) y muestre el resultado booleano.
 
-def comprobador(input):
-    if type(input) == str:
-        print("El dato ingresado es un string")
-    elif type(input) == int:
-        print("El dato ingresado es un integrer")
-    else:
-        print("El dato ingresado no es ni cadena de texto ni número entero.")
+def comprobador(dato):
+    try:
+        int_dato = int(dato)
+        print("El dato ingresado es un número entero (integer).")
+    except ValueError:
+        print("El dato ingresado es una cadena de texto (string).")
 
-input = (input("Introduzca una letra o número: "))
+input_usuario = (input("Introduzca una letra o número: "))
 
-comprobador(input)
+comprobador(input_usuario)
