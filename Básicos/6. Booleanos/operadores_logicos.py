@@ -5,10 +5,11 @@
 # NOT: Invierte el valor del operando.
 
 def solicitar_booleano(mensaje):
-    valor = input(mensaje).strip().lower()
-    if valor in ["true", "false"]:
-        return valor == "true"
-    print("Porfavor, ingresa 'True' o 'False'.")
+    while True:
+        valor = input(mensaje).strip().lower()
+        if valor in ["true", "false"]:
+            return valor == "true"
+        print("Porfavor, ingresa 'True' o 'False'.")
 
 booleano1 = solicitar_booleano("Ingresa el primer valor booleano (True/False): ")
 booleano2 = solicitar_booleano("Ingresa el segundo valor booleano (True/False): ")
