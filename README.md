@@ -22,9 +22,16 @@ Python
    │  ├─ 4. Funciones y Módulos
    │  │  ├─ generador_contraseñas.py
    │  │  └─ lista_de_compras.py
-   │  └─ 5. Interfaz Gráfica y Juegos
-   │     ├─ gpt_analizador_de_texto_gui.py
-   │     └─ gpt_simulador_dados.py
+   │  ├─ 5. Interfaz Gráfica y Juegos
+   │  │  ├─ gpt_analizador_de_texto_gui.py
+   │  │  └─ gpt_simulador_dados.py
+   │  └─ 6. Booleanos
+   │     ├─ comparacion_numeros.py
+   │     ├─ evaluacion_listas.py
+   │     ├─ operadores_logicos.py
+   │     ├─ par_o_impar.py
+   │     ├─ tipo_dato_usuario.py
+   │     └─ tipo_dato_usuario_isnumeric.py
    └─ README.md
 
 ```
